@@ -140,14 +140,14 @@ If you found no solution in the issues, feel free to open a new issue for your p
 
 4. Clone this repository into your catkin workspace, install the dependencies and build it:
 
-   ```
-cd ~/catkin_ws/src/
-git clone https://github.com/code-iai/iai_kinect2.git
-cd iai_kinect2
-rosdep install -r --from-paths .
-cd ~/catkin_ws
-catkin_make -DCMAKE_BUILD_TYPE="Release"
-```
+    ```
+    cd ~/catkin_ws/src/
+    git clone https://github.com/code-iai/iai_kinect2.git
+    cd iai_kinect2
+    rosdep install -r --from-paths .
+    cd ~/catkin_ws
+    catkin_make -DCMAKE_BUILD_TYPE="Release"
+    ```
 
    *Note: `rosdep` will output errors on not being able to locate `[kinect2_bridge]` and `[depth_registration]`.
    That is fine because they are all part of the iai_kinect2 package and `rosdep` does not know these packages.*
@@ -157,9 +157,9 @@ catkin_make -DCMAKE_BUILD_TYPE="Release"
 
 5. Connect your sensor and run `kinect2_bridge`:
 
-   ```
-roslaunch kinect2_bridge kinect2_bridge.launch
-```
+    ```
+    roslaunch kinect2_bridge kinect2_bridge.launch
+    ```
 6. Calibrate your sensor using the `kinect2_calibration`. [Further details](kinect2_calibration#calibrating-the-kinect-one)
 7. Add the calibration files to the `kinect2_bridge/data/<serialnumber>` folder. [Further details](kinect2_bridge#first-steps)
 8. Restart `kinect2_bridge` and view the results using `rosrun kinect2_viewer kinect2_viewer kinect2 sd cloud`.
